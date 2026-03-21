@@ -1,0 +1,24 @@
+# Core
+python-dotenv>=1.0.0
+requests>=2.31.0
+watchdog>=4.0.0          # file watcher for Agent 4
+
+# Story generation (Agent 1)
+ollama>=0.2.0             # Ollama Python client
+
+# Image generation (Agent 2)
+diffusers>=0.30.0
+transformers>=4.44.0
+accelerate>=0.33.0
+torch>=2.3.0
+torchvision>=0.18.0
+Pillow>=10.0.0
+
+# Audio + subtitles (Agent 3)
+TTS>=0.22.0               # Coqui XTTS v2
+whisperx>=3.1.0           # Word-level alignment
+
+# Assembly (Agent 5)
+# FFmpeg — install via system package manager:
+# Ubuntu/Debian: sudo apt install ffmpeg
+# macOS: brew install ffmpeg

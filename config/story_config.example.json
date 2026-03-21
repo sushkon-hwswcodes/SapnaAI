@@ -1,0 +1,40 @@
+{
+  "genre": "adventure",
+  "tone": "warm, hopeful, suitable for children aged 6-10",
+  "target_duration_minutes": 12,
+  "characters": [
+    {
+      "name": "Elena",
+      "description": "A curious 10-year-old girl with auburn hair and bright green eyes"
+    },
+    {
+      "name": "Max",
+      "description": "Elena's loyal dog, a golden retriever with a red bandana"
+    }
+  ],
+  "plot": "Elena discovers an old map in her grandmother's attic that leads her and her dog Max on a journey through an enchanted forest to find a lost library full of living books.",
+  "voices": {
+    "narrator": "voices/narrator.wav",
+    "Elena": "voices/elena.wav",
+    "default": "voices/narrator.wav"
+  },
+  "background_music": null,
+  "models": {
+    "story": {
+      "backend": "ollama",
+      "model": "mistral-nemo"
+    },
+    "images": {
+      "backend": "diffusers",
+      "model": "black-forest-labs/FLUX.1-dev"
+    },
+    "audio": {
+      "backend": "coqui",
+      "model": "tts_models/multilingual/multi-dataset/xtts_v2"
+    },
+    "motion": {
+      "backend": "wan2",
+      "model": "Wan2.1-I2V"
+    }
+  }
+}

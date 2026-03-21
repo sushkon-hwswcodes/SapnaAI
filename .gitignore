@@ -1,0 +1,45 @@
+# Runtime workspace outputs
+workspace/images/*
+workspace/audio/*
+workspace/clips/*
+workspace/output/*
+workspace/status/*
+!workspace/**/.gitkeep
+
+# Story config (may contain personal data)
+workspace/story_config.json
+
+# Model weights and large files
+*.safetensors
+*.ckpt
+*.bin
+*.pt
+*.pth
+
+# Voice reference clips (user-provided)
+voices/*.wav
+voices/*.mp3
+!voices/.gitkeep
+
+# Character reference images / LoRAs
+characters/*.png
+characters/*.jpg
+characters/*.safetensors
+!characters/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Environment
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
