@@ -56,11 +56,12 @@ Each scene must have these exact fields:
 }}
 
 Rules:
-- duration_seconds must be a positive integer between 6 and 15
-- characters must be a non-empty array using the exact names from the config
+- duration_seconds must be a positive integer between 15 and 30
+- characters must always be a non-empty array — use ["narrator"] if no character is present
 - image_prompt must be rich and cinematic, mentioning character appearances
 - narration must flow naturally when read aloud
-- Total of all duration_seconds should be approximately {target_seconds} seconds
+- Total of all duration_seconds must add up to approximately {target_seconds} seconds
+- You must generate exactly {scene_count} scenes — no more, no less
 
 Return a JSON array of exactly {scene_count} scenes. Nothing else.
 """
@@ -97,7 +98,8 @@ def load_config() -> dict:
 def build_prompt(config: dict, retry: bool = False) -> tuple[str, int, int]:
     duration_minutes = config["target_duration_minutes"]
     target_seconds   = duration_minutes * 60
-    scene_count      = max(10, round(target_seconds / 8))
+    # 20s average per scene keeps JSON output manageable for smaller models
+    scene_count      = max(10, round(target_seconds / 20))
 
     characters_str = ", ".join(
         f"{c['name']} ({c['description']})" if isinstance(c, dict) else str(c)
