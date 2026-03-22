@@ -22,19 +22,28 @@
   "models": {
     "story": {
       "backend": "ollama",
-      "model": "mistral-nemo"
+      "model": "mistral-nemo",
+      "checkpoint_path": null,
+      "endpoint": "http://localhost:11434",
+      "_backends": "ollama | vllm | huggingface"
     },
     "images": {
       "backend": "diffusers",
-      "model": "black-forest-labs/FLUX.1-dev"
+      "model": "black-forest-labs/FLUX.1-dev",
+      "checkpoint_path": "models/images/FLUX.1-dev",
+      "endpoint": null
     },
     "audio": {
       "backend": "coqui",
-      "model": "tts_models/multilingual/multi-dataset/xtts_v2"
+      "model": "tts_models/multilingual/multi-dataset/xtts_v2",
+      "checkpoint_path": "models/audio/xtts_v2",
+      "endpoint": null
     },
     "motion": {
       "backend": "wan2",
-      "model": "Wan2.1-I2V"
+      "model": "Wan2.1-I2V",
+      "checkpoint_path": "models/motion/Wan2.1-I2V",
+      "endpoint": null
     }
   }
 }
